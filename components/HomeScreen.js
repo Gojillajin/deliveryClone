@@ -50,12 +50,27 @@ export const HomeScreen = () => {
             </View>
 
             {/* search */}
-            <View>
-                <View>
-                    <MagnifyingGlassIcon size={20} color='#00CCBB' />
-                    <TextInput />
+            <View style={{ 
+                display : 'flex',
+                flexDirection : 'row',
+                alignItems : 'center',
+                justifyContent : 'space-between'
+                }}>
+                <View style={{
+                    display : 'flex',
+                    flexDirection : 'row',
+                    flex : 1,
+                    alignItems : 'center',
+                    backgroundColor : '#d3d3d3'
+                 }}>
+                    <MagnifyingGlassIcon size={20} color='gray' />
+                    <TextInput 
+                    placeholder='Restaurants and cuisines'
+                    keyboardType='default' />
                 </View>
-                <AdjustmentsVerticalIcon size={20} color='#00CCBB' />
+                <View style={{ marginRight : 5 }} >
+                    <AdjustmentsVerticalIcon size={20} color='#00CCBB' />
+                </View>
             </View>
             
     </SafeAreaView>
