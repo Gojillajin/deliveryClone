@@ -1,11 +1,18 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { useLayoutEffect } from 'react'
-import { Image, StyleSheet, Text, View } from 'react-native';
+import { Image, StyleSheet, Text, TextInput, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { 
+    AdjustmentsHorizontalIcon,
+    AdjustmentsVerticalIcon,
+    CheckBadgeIcon,
     ChevronDownIcon,
-    UserIcon
-} from "react-native-heroicons/outline"
+    UserIcon,
+    MagnifyingGlassIcon
+    
+    
+} from "react-native-heroicons/outline";
+
 
 
 export const HomeScreen = () => {
@@ -22,7 +29,6 @@ export const HomeScreen = () => {
     <SafeAreaView style={ {
         paddingTop : 5,
         backgroundColor : 'white'} }>
-        <Text>
             {/* Header */}
             <View style={ styles.container } >
                 <View style={ styles.area }> 
@@ -40,9 +46,18 @@ export const HomeScreen = () => {
                         </Text>
                     </View>
                 </View>
-                <UserIcon size={35} color="#00CCBB" />
+                <UserIcon style={{ padding : 2 }} size={35} color="#00CCBB" />
             </View>
-        </Text>
+
+            {/* search */}
+            <View>
+                <View>
+                    <MagnifyingGlassIcon size={20} color='#00CCBB' />
+                    <TextInput />
+                </View>
+                <AdjustmentsVerticalIcon size={20} color='#00CCBB' />
+            </View>
+            
     </SafeAreaView>
   );
 }
