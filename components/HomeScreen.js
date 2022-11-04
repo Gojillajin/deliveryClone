@@ -3,16 +3,14 @@ import React, { useLayoutEffect } from 'react'
 import { Image, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { 
-    AdjustmentsHorizontalIcon,
     AdjustmentsVerticalIcon,
-    CheckBadgeIcon,
     ChevronDownIcon,
     UserIcon,
     MagnifyingGlassIcon
-    
-    
 } from "react-native-heroicons/outline";
 import Categories from './categories';
+import FeaturedRow from './FeaturedRow';
+
 
 
 
@@ -28,7 +26,8 @@ export const HomeScreen = () => {
 
     return (
     <SafeAreaView style={ {
-        paddingTop : 5,
+        marginTop : 5,
+        padding : 8,
         backgroundColor : 'white'} }>
             {/* Header */}
             <View style={ styles.container } >
@@ -82,6 +81,26 @@ export const HomeScreen = () => {
                  {/* Categories */}
                  <Categories />
                  {/* Featured */}
+                 
+                 <FeaturedRow
+                    id="123"
+                    title="Feature"
+                    description="Paid placements from our partners"
+                 />
+
+                {/* Tasty Discounts */}
+                <FeaturedRow
+                    id="1234"
+                    title="Tasty Discounts"
+                    description="Everyone's been enjoying these juicy discounts"
+                 />
+
+                {/* Offers near you */}
+                <FeaturedRow
+                    id="1235"
+                    title="Offers near you"
+                    description="Why not support your local restaurnat tonight!"
+                 />
             </ScrollView>
     </SafeAreaView>
   );
