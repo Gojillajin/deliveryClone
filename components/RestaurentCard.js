@@ -1,6 +1,6 @@
 import { View, Text, TouchableOpacity, Image } from 'react-native'
 import React from 'react'
-import { StarIcon } from 'react-native-heroicons/outline'
+import { MapPinIcon, StarIcon } from 'react-native-heroicons/outline'
 
 
 const RestaurentCard = ({
@@ -16,7 +16,18 @@ const RestaurentCard = ({
     lat
 }) => {
   return (
-    <TouchableOpacity>
+    <TouchableOpacity style={{
+        backgroundColor : 'white',
+        margin : 3,
+        shadowColor : '#000',
+        shadowOffset : {
+            width : 0,
+            height : 2
+        },
+        shadowOpacity : 0.25,
+        shadowRadius : 3.84,
+        elevation : 5
+    }} >
         <Image 
             source={{
                 uri : imgUrl
@@ -44,7 +55,27 @@ const RestaurentCard = ({
                 alignItems : 'center',
             }}>
                 <StarIcon size={22} color="green" />
-                <Text>{rating} · {genre}</Text>
+                <Text style={{
+                    fontSize : 10,
+                    color : 'gray'
+                }} >
+                    <Text style={{
+                        color : 'green'
+                    }} >{rating}</Text>· {genre}
+                </Text>
+            </View>
+                
+            <View style={{
+                display : 'flex',
+                flexDirection : 'row',
+                alignItems : 'center'
+            }} >
+            <MapPinIcon color='gray' opacity={0.4} size={22} />
+                <Text style={{
+                    fontSize : 10,
+                    color : 'gray'
+                }} >Nearby · {address}
+                </Text>
             </View>
         </View>
         
